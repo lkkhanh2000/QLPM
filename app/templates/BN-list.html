@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center text-danger">
+            DANH SÁCH BỆNH NHÂN
+        </h1>
+        <div>
+            <form>
+                <div class="form-group">
+                    <input class="form-control"
+                           name="kw"
+                           placeholder="Nhập từ khóa để tìm..." />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Tìm kiếm" class="btn btn-danger" />
+                </div>
+            </form>
+        </div>
+        <table class="table">
+            <tr>
+                <th>mã BN</th>
+                <th>Họ tên</th>
+                <th>Ngày khám</th>
+                <th>Loại bệnh</th>
+                <th>Triệu chứng</th>
+            </tr>
+            {% for p in benhnhan %}
+            <tr>
+                <td>{{ p.maBN }}</td>
+                <td>{{ p.hoTen }}</td>
+                <td>{{ p.ngayKham }}</td>
+                <td>{{ p.loaiBenh }}</td>
+                <td>{{ p.trieuchung }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
